@@ -1,0 +1,35 @@
+<html>
+  <head>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+  </head>
+  <body>
+    <div id="container" style="width: 800px; height:4000px; margin: 0 auto;"></div>
+    <div id="top" style="position: fixed; top:20px; right: 10px;">TOP</div>
+  </body>
+  <script type="text/javascript">
+
+    var widths = [200,400];
+
+    var heights = [400,250,400,450,500,550,600];
+
+    for(var i=0;i<50;i++){
+      $("#container").append("<img style='float: left;' src='http://placekitten.com/g/"+
+        widths[Math.floor(Math.random()*widths.length)]+"/"+
+        heights[Math.floor(Math.random()*heights.length)]+"' />");
+    }
+
+    $("#top").click(function(){
+        $("html, body").animate({ scrollTop: 0 }, "slow");
+    });
+
+    $( window ).scroll(function() {
+      var scrollHeight = $(window).scrollTop();
+        if( scrollHeight > window.innerHeight){
+          $( "#top" ).css( "display", "block" );
+        }
+        else{
+          $( "#top" ).css( "display", "none" );
+        }
+    });
+  </script>
+</html>
