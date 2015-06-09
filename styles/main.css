@@ -1,10 +1,17 @@
+body{
+    background-color: #b1b1b1;
+}
+
 #container{
-  width: 800px;
-  height:4000px;
+  width: 840px;
+  height: auto;
   margin: 0 auto;
+  background-color:#fff;
+  position: relative;
 }
 
 #top{
+  display: none;
   width: 51px;
   height: 51px;
   cursor: pointer;
@@ -12,4 +19,9 @@
   position: fixed;
   bottom:20px;
   right: 10px;
+}
+
+img{
+  padding: 5px;
+  position:absolute;
 }
