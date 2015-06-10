@@ -1,10 +1,10 @@
 body{
-    background-color: #b1b1b1;
+    background-color: #222;
 }
 
 #container{
   width: 840px;
-  height: auto;
+  height: 8000px;
   margin: 0 auto;
   background-color:#fff;
   position: relative;
@@ -23,5 +23,4 @@ body{
 
 img{
   padding: 5px;
-  position:absolute;
 }

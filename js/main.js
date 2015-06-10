@@ -1,53 +1,50 @@
-var widths = [200,400];
-var heights = [400,250,400,450,500,550,600];
+var widths = [200,400],
+    heights = [250,330,450,480,500,550,600],
+    images = [],
+    image,
+    container = $("#container");
 
-var images = [];
-var imageMeta = {height: 0};
-
-var image;
-for(var i=0;i<50;i++){
-    image = {
-      height: heights[ Math.floor(Math.random()*heights.length) ],
-      width: widths[ Math.floor(Math.random()*widths.length) ]
-    }
-    imageMeta.height += ( image.height + 10 );
-    images.push(image);
+function loadImages(n){
+  for(var i=0;i<n;i++){
+      image = {
+        height: heights[ Math.floor(Math.random()*heights.length) ],
+        width: widths[ Math.floor(Math.random()*widths.length) ]
+      }
+      images.push(image);
+  }
+  _.each(images,appendImage);
 }
 
+function appendImage(image){
 
-var coords,
-    packer = new NETXUS.RectanglePacker( 840, imageMeta.height );
+  var img = $("<img />");
+  img.attr({
+    src: "http://placekitten.com/g/"+image.width+"/"+image.height,
+    height: image.height,
+    width: image.width,
+    alt: "Image could not be loaded"
+  });
+  container.append(img);
+};
 
-_.each(images,function(image){
-    coords = packer.findCoords( image.width+10, image.height+10 );
+function showScrollToTop() {
 
-
-    var img = $("<img />");
-    img.attr({
-      src: "http://placekitten.com/g/"+image.width+"/"+image.height,
-      height: image.height,
-      width: image.width
-    });
-
-    img.css({
-      top: coords.y,
-      left: coords.x
-    })
-
-    $("#container").append(img);
-});
-
-
-$("#top").click(function(){
-    $("html, body").animate({ scrollTop: 0 }, "slow");
-});
-
-$( window ).scroll(function() {
   var scrollHeight = $(window).scrollTop();
-    if( scrollHeight > window.innerHeight){
-      $( "#top" ).css( "display", "block" );
-    }
-    else{
-      $( "#top" ).css( "display", "none" );
-    }
-});
+  if( scrollHeight > window.innerHeight){
+    $( "#top" ).css( "display", "block" );
+  }
+  else{
+    $( "#top" ).css( "display", "none" );
+  }
+}
+
+function animateScroll(){
+    $("html, body").animate({ scrollTop: 0 }, "slow");
+};
+
+
+
+loadImages(50);
+
+$("#top").click(animateScroll);
+$( window ).scroll(showScrollToTop);
