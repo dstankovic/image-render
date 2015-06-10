@@ -1,5 +1,5 @@
-var widths = [200,400],
-    heights = [250,330,380,450,470,480,500,530,550,600],
+var widths = [200,403],
+    heights = [250,330,370,418,440,470,500,530,550,600],
     images = [],
     image,
     container = $("#container"),
