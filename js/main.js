@@ -2,12 +2,14 @@ var widths = [200,400],
     heights = [250,330,380,450,470,480,500,530,550,600],
     images = [],
     image,
-    container = $("#container");
+    container = $("#container"),
+    pck = container.packery();
 
-function loadImages(){
+function loadImages(n){
 
-  var n = $(location).attr('search').slice(1) || 50;
-
+  var urlParam = $(location).attr('search').slice(1);
+  n = $.isNumeric(urlParam)? urlParam : n;
+  images = [];
   for(var i=0;i<n;i++){
       image = {
         height: heights[ Math.floor(Math.random()*heights.length) ],
@@ -28,6 +30,7 @@ function appendImage(image){
     alt: "Image could not be loaded"
   });
   container.append(img);
+  pck.packery('appended',img);
 };
 
 function showScrollToTop() {
@@ -47,7 +50,8 @@ function animateScroll(){
 
 
 
-loadImages();
+loadImages(50);
 
+$("#load-more").click(function(){loadImages(15);});
 $("#top").click(animateScroll);
 $( window ).scroll(showScrollToTop);

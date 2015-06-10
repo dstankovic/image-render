@@ -3,7 +3,7 @@ body{
 }
 
 #container{
-  width: 840px;
+  width: 825px;
   height: 8000px;
   margin: 0 auto;
   background-color:#fff;
@@ -17,10 +17,26 @@ body{
   cursor: pointer;
   background: url('../images/top.png') no-repeat center center;
   position: fixed;
-  bottom:20px;
-  right: 10px;
+  top:15px;
+  right: 15px;
 }
 
+
+
 img{
-  padding: 5px;
+  padding: 5px 0 5px 5px;
+}
+
+.button-holder{
+  text-align:center;
+  margin: 20px 0;
+}
+
+#load-more{
+  background-color: #268E45;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0 auto;
+  padding: 10px;
+  cursor: pointer;
 }
