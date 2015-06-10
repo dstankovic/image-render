@@ -1,8 +1,7 @@
 var widths = [200,400],
     heights = [250,330,450,480,500,550,600],
     images = [],
-    image,
-    container = $("#container");
+    image;
 
 function loadImages(n){
   for(var i=0;i<n;i++){
@@ -24,7 +23,7 @@ function appendImage(image){
     width: image.width,
     alt: "Image could not be loaded"
   });
-  container.append(img);
+  $("#container").append(img);
 };
 
 function showScrollToTop() {
