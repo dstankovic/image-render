@@ -1,10 +1,13 @@
 var widths = [200,400],
-    heights = [250,330,450,480,500,550,600],
+    heights = [250,330,380,450,470,480,500,530,550,600],
     images = [],
     image,
     container = $("#container");
 
-function loadImages(n){
+function loadImages(){
+
+  var n = $(location).attr('search').slice(1) || 50;
+
   for(var i=0;i<n;i++){
       image = {
         height: heights[ Math.floor(Math.random()*heights.length) ],
@@ -44,7 +47,7 @@ function animateScroll(){
 
 
 
-loadImages(50);
+loadImages();
 
 $("#top").click(animateScroll);
 $( window ).scroll(showScrollToTop);
