@@ -1,0 +1,26 @@
+body{
+    background-color: #222;
+}
+
+#container{
+  width: 840px;
+  height: 8000px;
+  margin: 0 auto;
+  background-color:#fff;
+  position: relative;
+}
+
+#top{
+  display: none;
+  width: 51px;
+  height: 51px;
+  cursor: pointer;
+  background: url('../images/top.png') no-repeat center center;
+  position: fixed;
+  bottom:20px;
+  right: 10px;
+}
+
+img{
+  padding: 5px;
+}

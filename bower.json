@@ -1,0 +1,21 @@
+{
+  "name": "image-render",
+  "version": "0.0.0",
+  "homepage": "https://github.com/dstankovic/image-render",
+  "authors": [
+    "Dusan Stankovic <dusanstankovic90@gmail.com>"
+  ],
+  "description": "image-render",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "~2.1.4",
+    "packery": "~1.4.1"
+  }
+}
