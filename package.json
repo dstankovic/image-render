@@ -1,0 +1,25 @@
+{
+  "name": "image-render",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dstankovic/image-render.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dstankovic/image-render/issues"
+  },
+  "homepage": "https://github.com/dstankovic/image-render#readme",
+  "dependencies": {
+    "jquery": "^2.1.4",
+    "main-loop": "^3.1.0",
+    "packery": "^1.4.1",
+    "virtual-dom": "^2.0.1"
+  }
+}
